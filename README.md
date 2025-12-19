@@ -16,7 +16,7 @@ MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benc
 ```
 mast/
 ├── benchmarks/
-│   ├── noharm/                 # NOHARM benchmark
+│   ├── noharm/                # NOHARM benchmark
 │   │   ├── prompt.md          # Base prompt for API requests
 │   │   ├── schema.json        # Response validation schema
 │   │   ├── validator.py       # API testing logic
@@ -167,11 +167,3 @@ We welcome contributions! See [docs/contributing.md](docs/contributing.md) for:
 ### Schema Files (.json)
 - JSON Schema for response validation
 - Defines required structure and types
-
-## License
-
-[TODO: Add license information]
-
-## Contact
-
-[TODO: Add contact information]
