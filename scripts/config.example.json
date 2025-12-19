@@ -1,0 +1,14 @@
+{
+  "endpoint": {
+    "url": "https://your-api-endpoint.com",
+    "token": "your_bearer_token_here",
+    "timeout": 300,
+    "description": "Single API endpoint for all benchmarks"
+  },
+  "instructions": {
+    "url": "The HTTP endpoint URL for your API",
+    "token": "Bearer token for authentication (will be sent as 'Authorization: Bearer {token}')",
+    "timeout": "Maximum time in seconds to wait for API response (max 300)",
+    "description": "Optional description of your endpoint"
+  }
+}

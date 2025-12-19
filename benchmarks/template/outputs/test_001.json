@@ -1,0 +1,12 @@
+[
+  {
+    "Option": 1,
+    "GradeAI": "Appropriate",
+    "Rationale": "[TODO: Add clinical justification for option 1]"
+  },
+  {
+    "Option": 2,
+    "GradeAI": "Inappropriate", 
+    "Rationale": "[TODO: Add clinical justification for option 2]"
+  }
+]

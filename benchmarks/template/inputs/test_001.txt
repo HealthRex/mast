@@ -1,0 +1,1 @@
+[TODO: Add sample input text for SCT benchmark test case 001]
