@@ -1,12 +1,16 @@
 # Medical AI Superintelligence Test (MAST) Leaderboard
 ## Overview
 
-MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benchmarks to evaluate real-world medical capabilities of artificial intelligence models. The system provides a leaderboard where AI models submit API endpoints that are automatically tested against standardized medical scenarios. This repository provides information and test files for ensuring proper functioning of custom model API endpoints.
+MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benchmarks to evaluate real-world medical capabilities of artificial intelligence models. The system provides a leaderboard where AI models submit API endpoints that are automatically tested against standardized medical scenarios. 
+
+The live leaderboard is available at [bench.arise-ai.org](https://bench.arise-ai.org).
+
+This repository provides instructions and test files to validate your custom model API endpoint. After passing validation, view the [Submission Agreement](https://docs.google.com/document/d/1LgqU4CBx9ix095PxFX9G9vnm39G6OL-A7XQfjL4qw0g) and submit the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) for review by the MAST team. The API and token are used only for benchmark execution and are not stored after evaluation.
 
 ## How It Works
 
 1. **Submitters** provide a single API endpoint with authentication token
-2. **Leaderboard admin** runs automated tests against all benchmarks using that endpoint
+2. **Leaderboard** runs automated tests against all benchmarks using that endpoint
 3. **API calls** are made with standardized prompts and test cases for each benchmark
 4. **Responses** are validated for format compliance
 5. **Results** are manually reviewed prior to publication on the leaderboard
@@ -49,7 +53,7 @@ git clone https://github.com/HealthRex/mast.git
 cd mast
 ```
 
-2. **Set up your API endpoint** locally or provide a hosted endpoint
+2. **Set up your API endpoint** provide a hosted endpoint for accessing and benchmarking your model.
 
 3. **Configure your endpoint** by copying and editing the config:
 ```bash
@@ -62,38 +66,9 @@ cp scripts/config.example.json scripts/config.json
 python scripts/validate_all.py
 ```
 
-### For Leaderboard Admins
-
-1. **Collect submissions** from participants (API URL + token)
-
-2. **Configure endpoint** in `scripts/config.json`:
-```json
-{
-  "endpoint": {
-    "url": "https://participant-api.com",
-    "token": "participant_token",
-    "timeout": 300
-  }
-}
-```
-
-3. **Run tests:**
-```bash
-python scripts/validate_all.py
-```
-
-4. **Review results** in the `results/` directory
-
-## Prerequisites
-
-Install required Python packages:
-```bash
-pip install jsonschema requests
-```
-
 ## API Request Format
 
-Each benchmark makes HTTP POST requests with:
+Each benchmark makes HTTPS POST requests with:
 
 - **Method**: `POST`
 - **Headers**:
@@ -122,35 +97,47 @@ APIs must return JSON arrays in this format:
 
 ## Benchmarks
 
-### NOHARM Benchmark
+### First Do NOHARM Benchmark
 
-- **Paper**: https://arxiv.org/abs/2512.01241
-- **Task**: Clinical decision support for primary care
-- **Input**: Medical cases with multiple treatment options
-- **Output**: Appropriateness ratings for each option
+- **Study**: https://arxiv.org/abs/2512.01241
+- **Task**: Provide complete and appropriate medical recommendations for a medical case
+- **Input**: Real medical case questions posed by generalist physicians
+- **Output**: Appropriateness ratings for numerous plausible options
 - **Validation**: Format compliance (schema validation only)
 
-## Results Storage
+## Validation Results
 
 All API responses are saved for auditability:
 
 - **`test_XXX_response.json`**: Complete API response with metadata
 - **`test_XXX_validation.json`**: Validation results and error details
 
-## Contributing
+## Prerequisites
+### Python Dependencies
+Install required packages:
+```bash
+pip install jsonschema requests
+```
 
-We welcome contributions! See [docs/contributing.md](docs/contributing.md) for:
+### API Requirements
+- **Stable endpoint**: API must remain accessible for at least 72 hours during benchmarking
+- **Concurrent requests**: Must support 5-10 simultaneous connections
+- **Authentication**: Bearer token authentication required
+- **Response time**: Under 300 seconds per request
+- **Response format**: Valid JSON array output
 
-- Adding new benchmarks
-- Creating test cases
-- Implementing validators
-- Best practices
+### Resource Requirements
 
-## Dependencies
+#### Estimated Token Usage
+- Input tokens: ~10 million
+- Output tokens: ~10 million (may vary with reasoning depth)
 
-- Python 3.7+
-- `jsonschema` - JSON schema validation
-- `requests` - HTTP client for API testing
+#### Estimated Costs
+- DeepSeek V3.1: ~$9
+- OpenAI GPT-5: ~$110
+- Claude Sonnet 4.5: ~$180
+
+*Costs are approximate and depend on your provider's current pricing.*
 
 ## File Formats
 

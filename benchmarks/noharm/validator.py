@@ -2,7 +2,7 @@
 """
 API Validator for Noharm benchmark.
 
-This validator makes HTTP POST requests to submitter APIs,
+This validator makes HTTPS POST requests to submitter APIs,
 validates responses against the schema, and saves results.
 """
 
@@ -40,7 +40,7 @@ def load_input_file(input_path: Path) -> str:
 
 def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[str, Any]:
     """
-    Make HTTP POST request to submitter's API.
+    Make HTTPS POST request to submitter's API.
 
     Args:
         url: API endpoint URL

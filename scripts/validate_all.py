@@ -181,7 +181,7 @@ def show_config_info():
 def main():
     """Main API validation function."""
     print("🚀 Starting API validation for all benchmarks...")
-    print("This will make HTTP requests to configured endpoints\n")
+    print("This will make HTTPS requests to configured endpoints\n")
 
     # Validate configuration first
     if not validate_config():

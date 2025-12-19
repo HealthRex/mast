@@ -1,6 +1,6 @@
 # Contributing to the Leaderboard
 
-This guide explains how to contribute new benchmarks, test cases, or improvements to the leaderboard validation system.
+This guide explains how to contribute new benchmarks, test cases, or improvements to the leaderboard validation system. This is for the internal MAST team only.
 
 ## Adding a New Benchmark
 
