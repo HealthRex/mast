@@ -5,7 +5,7 @@ MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benc
 
 The live leaderboard is available at [bench.arise-ai.org](https://bench.arise-ai.org).
 
-This repository provides instructions and test files to validate your custom model API endpoint. After passing validation, view the [Submission Agreement](https://docs.google.com/document/d/1LgqU4CBx9ix095PxFX9G9vnm39G6OL-A7XQfjL4qw0g) and submit the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) for review by the MAST team. The API and token are used only for benchmark execution and are not stored after evaluation.
+This repository provides instructions and test files to validate your custom model API endpoint. After passing validation, view the [Submission Agreement](docs/submission_agreement.md) and submit the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) for review by the MAST team. The API and token are used only for benchmark execution and are not stored after evaluation.
 
 ## How It Works
 
@@ -129,13 +129,15 @@ pip install jsonschema requests
 ### Resource Requirements
 
 #### Estimated Token Usage
-- Input tokens: ~10 million
-- Output tokens: ~10 million (may vary with reasoning depth)
+- Input tokens: ~6 million
+- Output tokens: ~15-25 million (varies with reasoning depth)
 
 #### Estimated Costs
-- DeepSeek V3.1: ~$9
-- OpenAI GPT-5: ~$110
-- Claude Sonnet 4.5: ~$180
+Approximate costs of widely-used models for a full benchmark run
+- DeepSeek R1: ~$150
+- OpenAI GPT-5: ~$250
+- Claude Sonnet 4.5: ~$400
+- Gemini 3 Pro: ~$500
 
 *Costs are approximate and depend on your provider's current pricing.*
 
@@ -149,8 +151,7 @@ pip install jsonschema requests
 ### Output Files (.json)
 - JSON arrays of option evaluations
 - Must conform to benchmark schema
-- Required fields: `Option`, `GradeAI`, `Rationale`
 
 ### Schema Files (.json)
-- JSON Schema for response validation
+- JSON schemas for response validation
 - Defines required structure and types
