@@ -25,9 +25,9 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 - Models not publicly available via common inference aggregators (e.g., OpenRouter) must provide a **stable custom API endpoint** for MAST evaluation. Submitting organizations are responsible for ensuring endpoint availability, correctness, and compliance with the expected input/output schema throughout the evaluation period.
 
-- Models evaluated via custom API endpoints must operate in a **zero data-retention mode**. Submitting organizations must **not store, log, cache, reuse, or train on** any inputs, prompts, or outputs generated during MAST evaluation. Evaluation data may not be used for model improvement, benchmarking, analysis, or any purpose beyond real-time inference for the submitted evaluation.
+- Models evaluated via custom API endpoints must operate in a **zero data-retention mode**. Submitting organizations must **not store, log, cache, reuse, or train on** any inputs, prompts, or outputs generated during MAST evaluation.
 
-- Submitting organizations must follow the instructions and test examples provided in the GitHub repository (link above) to ensure their endpoint correctly handles the expected inputs and outputs.
+- Submitting organizations must follow the instructions and test examples provided in the GitHub repository to ensure their endpoint correctly handles the expected inputs and outputs.
 
 - Submitting organizations are responsible for **token costs** incurred during evaluation. Estimated token usage and evaluation parameters are provided for reference and may vary.
 
@@ -39,7 +39,7 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 - All verified and non-disqualified results will be posted publicly to the leaderboard. Once submitted and evaluated, model scores are **final**, will be made public, and **cannot be revoked or withdrawn** at the request of the submitting organization.
 
-- To discourage overfitting and repeated probing of the benchmark, models with multiple submissions will have their **mean-of-k performance** reported rather than best-of-k performance. The total number of submission attempts will be displayed publicly alongside the score.
+- To discourage overfitting and repeated probing of the benchmark, the total number of submission attempts will be displayed publicly alongside the score, as well as the date of submission.
 
 - The MAST team reserves the right to **disqualify any submission** made in bad faith or exhibiting suspicious activity, including but not limited to attempts at benchmark reconstruction, prompt leakage, coordinated probing, or violations of the Terms of Use.
 
@@ -49,10 +49,10 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 Participation in MAST is conditioned on agreement to responsible use of the benchmark. Submitting organizations agree **not** to attempt to reverse engineer, reconstruct, or infer the contents of the private test sets, nor to game or manipulate the evaluation process.
 
-Violations of this policy will result in **immediate disqualification** and **permanent removal** of the organization from all current and future MAST submissions, at the sole discretion of the MAST team.
+Violations of this policy will result in **immediate disqualification** and **permanent removal** of the organization from all current and future MAST submissions, at the sole discretion of the MAST team. Additionally, we reserve the right to pursue legal action.
 
 All decisions regarding verification, scoring, disqualification, and leaderboard inclusion are **final and non-appealable**.
 
 ---
 
-_Last modified on December 22nd, 2025._
+_Last modified on December 23rd, 2025._
